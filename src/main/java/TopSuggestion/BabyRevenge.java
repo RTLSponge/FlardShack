@@ -5,13 +5,12 @@ import org.spongepowered.api.Sponge;
 import org.spongepowered.api.data.manipulator.mutable.entity.AgeableData;
 import org.spongepowered.api.entity.Entity;
 import org.spongepowered.api.entity.ai.GoalTypes;
-import org.spongepowered.api.entity.ai.task.AITaskBuilder;
 import org.spongepowered.api.entity.ai.task.AITaskTypes;
 import org.spongepowered.api.entity.ai.task.builtin.creature.AttackLivingAITask;
 import org.spongepowered.api.entity.ai.task.builtin.creature.AvoidEntityAITask;
+import org.spongepowered.api.entity.ai.task.builtin.creature.target.FindNearestAttackableTargetAITask;
 import org.spongepowered.api.entity.living.Agent;
 import org.spongepowered.api.entity.living.Creature;
-import org.spongepowered.api.entity.living.Human;
 import org.spongepowered.api.entity.living.Living;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.event.Listener;
@@ -55,6 +54,7 @@ public class BabyRevenge {
                                 )
                         );
                     } else {
+
                         logger.log(Level.WARNING, "found nearby adult "+e);
                         ((Agent) e).getGoal(GoalTypes.NORMAL).ifPresent(
                                 agentGoal -> agentGoal.addTask(20,
@@ -63,6 +63,14 @@ public class BabyRevenge {
                                                 .target(Player.class)
                                                 .build((Creature) e))
                         );
+
+                        ((Agent) e).getGoal(GoalTypes.TARGET).ifPresent(
+                                agentGoal -> agentGoal.addTask(20,
+                                        Sponge.getGame().getRegistry().createBuilder(FindNearestAttackableTargetAITask.Builder.class)
+                                                .target(Player.class)
+                                                .build((Creature) e))
+                        );
+
                     }
                 }
         );
