@@ -1,7 +1,6 @@
 package TopSuggestion;
 
 import com.flowpowered.math.vector.Vector3d;
-import com.google.inject.Inject;
 import org.spongepowered.api.data.key.Keys;
 import org.spongepowered.api.entity.EntityTypes;
 import org.spongepowered.api.entity.projectile.Arrow;
@@ -14,7 +13,7 @@ import java.util.Optional;
 
 @Plugin(id = "SlimeRicochet", name = "SlimeRicochet", version = "0.1-SNAPSHOT")
 public class SlimeRicochet {
-    @Inject
+    //@Inject
     //Logger logger;
 
     //https://www.reddit.com/r/minecraftsuggestions/comments/3vso63/slimes_have_25_chance_to_ricochet_an_arrow/

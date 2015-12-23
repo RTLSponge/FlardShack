@@ -1,7 +1,6 @@
 package TopSuggestion;
 
 import com.flowpowered.math.vector.Vector3d;
-import org.spongepowered.api.block.BlockTypes;
 import org.spongepowered.api.effect.particle.ParticleEffect;
 import org.spongepowered.api.effect.particle.ParticleTypes;
 import org.spongepowered.api.entity.living.player.Player;
@@ -29,10 +28,10 @@ public class BlockDenyFeedback {
                         );
         player.spawnParticles(DENIED, x);
     }
-
+/**
     @Listener
     public void onInteractGrass(InteractBlockEvent.Primary event){
         event.setCancelled(event.getTargetBlock().getState().getType().equals(BlockTypes.GRASS));
     }
-
+**/
 }

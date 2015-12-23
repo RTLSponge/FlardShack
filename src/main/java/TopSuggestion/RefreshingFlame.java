@@ -1,7 +1,6 @@
 package TopSuggestion;
 
 import com.google.common.collect.Sets;
-import com.google.inject.Inject;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.block.BlockType;
 import org.spongepowered.api.block.BlockTypes;
@@ -21,7 +20,7 @@ import java.util.Set;
 @Plugin(id = "RefreshingFlame", name = "RefreshingFlame", version = "0.1-SNAPSHOT")
 public class RefreshingFlame {
 
-    @Inject
+    //@Inject
     //Logger logger;
 
     //https://www.reddit.com/r/minecraftsuggestions/comments/3d5l3p/jumping_into_water_while_on_fire_plays_a/
